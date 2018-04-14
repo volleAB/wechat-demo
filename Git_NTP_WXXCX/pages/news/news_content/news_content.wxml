@@ -1,0 +1,45 @@
+
+<!--mdyw.wxml-->
+ <import src="../../../wxParse/wxParse/wxParse.wxml" /> 
+
+<!--<view class="container">
+  <block>
+    <view class="title">
+      <text>{{name}}</text>
+    </view>
+    <view class="info">
+      <text>{{time}}</text>
+    </view>
+    <text class="detail">{{list}}</text>
+    <swiper class="files_list" wx:if="{{files_len}}" indicator-dots="{{files_len !== 1}}" autoplay="{{!file_loading}}">
+      <swiper-item wx:for="{{list}}" wx:key="fjid">
+        <view class="file">
+            <image src="/img/新闻.png" class="file-img"></image>
+            <view class="fileNameSource">
+              <text class="file-name">{{item.fjtitle}}</text>
+              <text class="file-source">{{source}}</text>
+            </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </block>
+</view>-->
+<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+<view class="line"><text></text></view>
+<view class="boundary">欢迎关注我们(≧∇≦)ﾉ</view>
+
+<view class="pages-row">
+<view class="pages-item">
+  <image class="pages-icon" src="{{xcxsource}}" data-src="{{imagesource}}" bindtap="previewImagexcx"></image>
+  <text>微信小程序</text>
+</view>
+<view class="pages-item">
+  <image class="pages-icon" src="{{wxsource}}" data-src="{{imagesource}}" bindtap="previewImagewx"></image>
+  <text>官方微信</text>
+</view>
+<view class="pages-item">
+  <image class="pages-icon" src="{{wbsource}}" data-src="{{imagesource}}" bindtap="previewImagewb"></image>
+  <text>官方微博</text>
+</view>
+</view>

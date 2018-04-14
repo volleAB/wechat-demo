@@ -1,0 +1,42 @@
+<!--在wxml中写结构-->
+<view class="con">
+   <view class="top">
+        <!--<navigator url="/pages/scuecpage/scuecpage?title=scuecpage" open-type="navigate" hover-class="none">-->
+        <view class="item1">
+                <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2655611982,1826916664&fm=23&gp=0.jpg" mode="aspectFill" class="logo-image"></image>
+            <view class="item1-text">
+                <text>中南民族大学</text>
+            </view>   
+        </view>
+        <!--</navigator>-->
+        <view class="item2">
+   		    <text>中南民族大学官方微信</text>
+        </view>
+        <!--<view class="item3">
+   		    <button size="mini" hover-class="button-hover">进入公众号</button>
+        </view>-->		
+   </view>
+
+   <view class="list">
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+        <view class="item" wx:for="{{list}}">
+            <navigator url="/pages/weixin/weixin_details/weixin_details?description={{item.description}}&time={{item.create_time}}&name={{item.name}}" open-type="navigate" hover-class="none" >
+            <view class="text">
+                <view class="title">
+                    <text>{{item.name}}</text>
+                </view>
+                <view class="time">
+                    <text>{{item.create_time}}</text>
+                </view>
+             </view>
+             <image class="img" src="{{item.pic_url}}" mode="aspectFill"></image>
+             </navigator>
+         </view>
+         </scroll-view>
+         <view class="body-view">
+             <loading hidden="{{hidden}}" bindchange="loadingChange">加载中...
+             </loading>
+         </view>
+    </view>
+
+</view>

@@ -1,0 +1,105 @@
+<view class="con">
+<!--<image src="{{backImage}}" class="bg"></image>-->
+<view class="top">
+    <view class="pages-row">
+      <navigator hover-class="none" url="/pages/news/news_index/news_index" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{newspaper}}"></image>
+          <text>民大新闻</text>
+        </view>
+      </navigator>
+      <navigator hover-class="none" url="/pages/developing/developing" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{weixin}}"></image>
+          <text>官方微信</text>
+        </view>
+      </navigator>
+      <navigator hover-class="none" url="/pages/weibo/weibo" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{weibo}}"></image>
+          <text>官方微博</text>
+        </view>
+      </navigator>
+      <navigator url="/pages/broadcast/broadcast_index/broadcast_index" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{broadcast}}"></image>
+          <text>民大广播</text>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="pages-row">
+      <navigator url="/pages/TV/TV_index/TV_index" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{television}}"></image>
+          <text>民大电视</text>
+        </view>
+      </navigator>
+      <navigator url="/pages/developing/developing" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{live}}"></image>
+          <text>双塔直播</text>
+        </view>
+      </navigator>
+      <navigator url="/pages/weizong/weizong_index/weizong_index" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{magazine}}"></image>
+          <text>微众杂志</text>
+        </view>
+      </navigator>
+      <navigator url="/pages/developing/developing" class="pages-item">
+        <view>
+          <image class="pages-icon" src="{{other}}"></image>
+          <text>其 他</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!--<view class="classname"></view>
+<view bindtap="bindViewTap" class="userinfo">
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+</view>-->
+  <!--<view class="bgpic">
+  <image class="bg" src="../../../img/index/bg.png" mode="scaleToFill"></image>
+</view>-->
+
+  <!--<view class="top2">
+  <image class="bg" src="../../../img/index/bg.png" mode="scaleToFill"></image>
+  <view class="user">
+    <view class="pages-row2">
+      <view class="pages-item2">
+        <image class="pages-icon2" mode="aspectFill" src="{{xcxsource}}" data-src="{{imagesource}}"  bindtap="previewImagexcx" ></image>
+        <text>小程序</text>
+      </view>
+      <view class="pages-item2" >
+        <image class="pages-icon2" src="{{wxsource}}" data-src="{{imagesource}}" bindtap="previewImagewx"></image>
+        <text>官方微信</text>
+      </view>
+      <view class="pages-item2">
+        <image class="pages-icon2" src="{{wbsource}}" data-src="{{imagesource}}" bindtap="previewImagewb"></image>
+        <text>官方微博</text>
+      </view>
+    </view>
+  </view>
+</view>-->
+
+<view class="top2">
+  <image class="bg" src="{{backImage}}" mode="scaleToFill"></image>
+</view>
+  <!--<view class="pages-row2">
+    <view class="pages-item2">
+      <image class="pages-icon2" mode="aspectFill" src="{{xcxsource}}" data-src="{{imagesource}}" bindtap="previewImagexcx"></image>
+      <text>小程序</text>
+    </view>
+    <view class="pages-item2">
+      <image class="pages-icon2" src="{{wxsource}}" data-src="{{imagesource}}" bindtap="previewImagewx"></image>
+      <text>官方微信</text>
+    </view>
+    <view class="pages-item2">
+      <image class="pages-icon2" src="{{wbsource}}" data-src="{{imagesource}}" bindtap="previewImagewb"></image>
+      <text>官方微博</text>
+    </view>
+  </view>-->
+<!--</view>-->
+</view>

@@ -1,0 +1,12 @@
+<view class="container">  
+    <text>这是我的test页面哦哦！！！</text>  
+</view>  
+<view>
+  <swiper class="swiper-menu" indicator-dots="true" autoplay="true" interval="4000" duration="1000">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item class="swiper-imgs">
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

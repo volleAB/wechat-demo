@@ -1,0 +1,11 @@
+<!--index.wxml   菜单模板 -->
+<template name="list">
+    <navigator url="{{route}}" class="pages-item" open-type="redirect" style="height:30%">
+        <view class="{{text==null||text.length==0?'pages-icon-wrapper-no-bg':'pages-icon-wrapper'}}">
+            <image src="{{icon}}" class="pages-icon"></image>
+        </view>
+        <view class="pages-text-wrapper">  
+            <text class="pages-text">{{text}}</text>  
+        </view> 
+    </navigator>
+</template>
