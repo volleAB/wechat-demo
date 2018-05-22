@@ -28,21 +28,22 @@
 </view>
 !-->
     <!--(有图片)循环输出列表 end-->
-    <block wx:for="{{list}}" wx:key="item.content_id">
-      <navigator url="/pages/news/news_content/news_content?id={{item.content_id}}&time={{item.news_push_time}}&name={{item.news_title}}">
-        <view class="list-item">
-          <view class="list-item-left">
-            <text class="list-item-title">{{item.news_title}}</text>
-           
-            <text class="list-item-time">{{item.news_push_time}}</text>
-            <text class="list-item-preview">{{item.news_preview}}</text>
+    <!-- <scroll-view scroll-y scroll-with-animation='true' scroll-top='{{ topNum }}'> -->
+      <block wx:for="{{list}}" wx:key="item.content_id" wx:if="{{index>limit0&&index<limit1}}">
+         <navigator url="/pages/news/news_content/news_content?id={{item.content_id}}&time={{item.news_push_time}}&name={{item.news_title}}"> 
+          <view class="list-item">
+            <view class="list-item-left">
+              <text class="list-item-title">{{item.news_title}}</text>
+            
+              <text class="list-item-time">{{item.news_push_time}}</text>
+              <text class="list-item-preview">{{item.news_preview}}</text>
+            </view>
+            <!--<image class="list-item-icon" src="/img/share/rightjian.png"></image>-->
           </view>
-          <!--<image class="list-item-icon" src="/img/share/rightjian.png"></image>-->
-        </view>
-      </navigator>
-    </block>
-
+         </navigator> 
+      </block>
+    <!-- </scroll-view> -->
     <!--提醒消息-->
-    <text class="content-ending">正在加载...</text>
+    <view class="content-ending" catchtap='returnTop'>顶部</view>
   </view>
 </view>

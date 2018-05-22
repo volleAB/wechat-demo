@@ -31,7 +31,8 @@
     "backgroundTextStyle":"dark",            
     "navigationBarBackgroundColor": "#448ACA",   
     "navigationBarTitleText": "NEW民大",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   },
   "tabBar":{
     "list":[{

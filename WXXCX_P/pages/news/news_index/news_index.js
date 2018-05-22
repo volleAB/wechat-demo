@@ -25,39 +25,52 @@ var GetList = function(that){
       /*unlearn : unlearn*/
     },
     success:function(res){
-
       //console.info(that.data.list);
 
       var list = res.data.content;
-       console.log('list:',list);
-      for(var i = 0; i < res.data.content.length; i++){
+      // console.log('list:', list);
+      // for(var i = 0; i < res.data.content.length; i++){
         //res.data.list[i].create_time=utils.timestampTotime(res.data.list[i].create_time);
         //list.push(res.data.content[i]); 
-      }
+      // }
       that.setData({
         list: list
       });
-      page ++;
-      id++;
-      that.setData({
-        hidden:true
-      });
+      // page ++;
+      // id++;
+      // that.setData({
+        // hidden:true
+      // });
     }
   });
 }
 Page({
  data:{
   hidden:true,
-  //list:[],
-  scrollTop : 0,
-  scrollHeight:0,
+  // list:[
+  //   {
+  //     news_title:"dada",
+  //     news_push_time:"1312",
+  //     news_preview:"dadwqd"
+  //   },
+  //   {
+  //     news_title: "dasdda",
+  //     news_push_time: "132112",
+  //     news_preview: "dawqwd"
+  //   },
+  //   {
+  //     news_title: "asdda",
+  //     news_push_time: "11862",
+  //     news_preview: "dadswd"
+  //   },
+  // ],
   search: app.BASE_IMGURL + "/img/broadcast/search.png",
+  limit0: 1,
+  limit1: 15,
+  topNum: 0
  },
  onLoad:function(){
   //  这里要非常注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
-  //  console.log(app.BASE_URL);
-  //  console.log(app.BASE_URL+'/news/api/list/2');
-   //console.log(url);
    var that = this;
    wx.getSystemInfo({
      success:function(res){
@@ -73,25 +86,16 @@ Page({
   var that = this;
   GetList(that);
  },
- bindDownLoad:function(){
-  //  该方法绑定了页面滑动到底部的事件
+ onPullDownRefresh: function () {
    var that = this;
-   GetList(that);
- },
- scroll:function(event){
-  //  该方法绑定了页面滚动时的事件
+   console.log("好用不?");
+   var limit0 = that.data.limit0;
+   var limit1 = that.data.limit1;
+   console.log(limit0,limit1);
    this.setData({
-     scrollTop : event.detail.scrollTop
-   });
- },
- refresh:function(event){
-  //  该方法绑定了页面滑动到顶部的事件，然后做上拉刷新
-   page = 0;
-   this.setData({
-     list : [],
-     scrollTop : 0
-   });
-   GetList(this)
+     limit0: limit0 + 15,
+     limit1: limit1 + 15,
+   })
  },
  inputFocus: function (e) {
    if (e.target.id == 'userid') {
@@ -123,4 +127,12 @@ Page({
      wx.hideKeyboard();
    }
  },
+ returnTop: function () {
+
+   console.log("run", this.data.topNum)
+   this.setData({
+     topNum: this.data.topNum = 0
+   });
+   console.log(this.data.topNum)
+ }
 })
