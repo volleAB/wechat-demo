@@ -83,6 +83,7 @@ Page({
    this.setData({
      scrollTop : event.detail.scrollTop
    });
+   console.log(this.data.scrollTop)
  },
  refresh:function(event){
   //  该方法绑定了页面滑动到顶部的事件，然后做上拉刷新

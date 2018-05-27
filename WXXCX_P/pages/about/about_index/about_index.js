@@ -9,7 +9,7 @@ Page({
     feedback: app.BASE_IMGURL +"/img/about/feedback.png",
     about: app.BASE_IMGURL +"/img/about/about.png",
     rightjian: app.BASE_IMGURL +"/img/share/rightjian.png",
-    background: app.BASE_IMGURL +"/img/about/background4.jpg",
+    background: "/img/about-bg.jpg",
     userInfo: {},
     y_menus: [
       { id: 1, icon:app.BASE_IMGURL+'/img/绑定.png',title:'未绑定',shuoming:'前往绑定',jiantou:'/img/rightjian.png'},

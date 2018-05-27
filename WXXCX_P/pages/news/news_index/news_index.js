@@ -17,33 +17,17 @@ var GetList = function(that){
     url: url,
     data:{
       page : page,
-      /*page_size : page_size,*/
-      /*sort : sort,*/
-      /*is_easy : is_easy,*/
       id : id,
-      /*pos_id : pos_id,*/
-      /*unlearn : unlearn*/
     },
     success:function(res){
-      //console.info(that.data.list);
-
       var list = res.data.content;
-      // console.log('list:', list);
-      // for(var i = 0; i < res.data.content.length; i++){
-        //res.data.list[i].create_time=utils.timestampTotime(res.data.list[i].create_time);
-        //list.push(res.data.content[i]); 
-      // }
       that.setData({
         list: list
       });
-      // page ++;
-      // id++;
-      // that.setData({
-        // hidden:true
-      // });
     }
   });
 }
+
 Page({
  data:{
   hidden:true,
@@ -64,14 +48,22 @@ Page({
   //     news_preview: "dadswd"
   //   },
   // ],
-  search: app.BASE_IMGURL + "/img/broadcast/search.png",
+  search: app.BASE_IMGURL + "/img/search.png",
   limit0: 1,
   limit1: 15,
-  topNum: 0
+  scrollTop: 0,
+  scrollHeight: 0,
+  topNum: 0,
+  show: true
  },
  onLoad:function(){
   //  这里要非常注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
    var that = this;
+   wx.showToast({
+     title: '请等待',
+     icon: 'loading',
+     duration: 15000,
+   }),
    wx.getSystemInfo({
      success:function(res){
        console.info(res.windowHeight);
@@ -127,12 +119,35 @@ Page({
      wx.hideKeyboard();
    }
  },
- returnTop: function () {
-
-   console.log("run", this.data.topNum)
-   this.setData({
-     topNum: this.data.topNum = 0
-   });
-   console.log(this.data.topNum)
+ handletouchmove: function () {
+   this.queryMultipleNodes();
+ },
+ //获取屏幕滚动出去的高度  
+ queryMultipleNodes: function () {
+   var self = this;
+   var query = wx.createSelectorQuery();
+   query.select('#container').boundingClientRect();
+   query.selectViewport().scrollOffset();
+ },
+ //返回顶部  
+ backToTop: function () {
+   var that = this;
+   that.setData({
+     scrollTop: 0
+   })
+  this.onPullDownRefresh();
+ },
+ scroll: function (e, res) {
+   // 容器滚动时将此时的滚动距离赋值给 this.data.scrollTop
+   console.log(this.data.scrollTop)
+   if (e.detail.scrollTop > 40) {
+     this.setData({
+       show: false
+     });
+   } else {
+     this.setData({
+       show: true
+     });
+   }
  }
 })
