@@ -21,13 +21,13 @@ var GetList = function(that){
     },
     success:function(res){
       var list = res.data.content;
+      console.log(res.data)
       that.setData({
         list: list
       });
     }
   });
 }
-
 Page({
  data:{
   hidden:true,
